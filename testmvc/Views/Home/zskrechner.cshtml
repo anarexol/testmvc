@@ -1,0 +1,48 @@
+﻿@model testmvc.Models.ZSKbag
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+    <title>Index</title>
+    @*<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />*@
+</head>
+<body>
+    <div class="ZSK_Input">
+        <h3>ZSK to EUR Exchange</h3>
+        @using (Html.BeginForm())
+        {
+            <table>
+
+                <tr>
+                    <td>Anzahl Ziegen (1:300): </td>
+                    <td>@Html.TextBoxFor(m => m.Ziegen) @ViewBag.Ziegen</td>
+                </tr>
+
+                <tr>
+                    <td>Anzahl Schafe (1:200): </td>
+                    <td>@Html.TextBoxFor(m => m.Schafe) @ViewBag.Schafe</td>
+                </tr>
+
+                <tr>
+                    <td>Anzahl Kühe (1:800): </td>
+                    <td>@Html.TextBoxFor(m => m.Kuehe) @ViewBag.Kuehe</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><input type="submit" class="btn btn-outline-dark" value="Calculate!"></td>
+                </tr>
+            </table>
+
+        }
+
+        <h4 style="color:purple">
+            @ViewBag.Ausgabe @ViewBag.EUR
+        </h4>
+    </div>
+</body>
+</html>
