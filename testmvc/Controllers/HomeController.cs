@@ -16,11 +16,29 @@ namespace testmvc.Controllers {
         }
 
         [HttpGet]
- 
-        [HttpPost]
+
+        public ActionResult ZSK() {
+            return View("Splash");
+        }
+        public ActionResult Bilder() {
+            return View();
+        }
+
+        public ActionResult Katze() {
+            return View();
+        }
+
+        public ActionResult Canada() {
+            return View();
+        }
+
+        public ActionResult CanadaGay() {
+            return View();
+        }
+
         public ActionResult Zskrechner(ZSKbag zsk) {
 
-            
+
 
             ViewBag.Ziegen = zsk.Ziegen * 300;
             ViewBag.Schafe = zsk.Schafe * 200;
@@ -29,11 +47,13 @@ namespace testmvc.Controllers {
             if (ViewBag.EUR != 0 && ViewBag.EUR != null)
             {
                 ViewBag.Ausgabe = "Sie erhalten EUR: ";
-                
+
             }
             return View("zskrechner");
 
         }
+
+
 
     }
 }

@@ -1,21 +1,12 @@
 ﻿@model testmvc.Models.ZSKbag
 @{
-    Layout = "";
+    ViewBag.Title = "zskrechner";
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
-    <title>Index</title>
-    @*<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />*@
-</head>
-<body>
-    <div class="ZSK_Input">
-        <h3>ZSK to EUR Exchange</h3>
         @using (Html.BeginForm())
         {
+            <h4>ZSK to EUR Exchange</h4>
             <table>
 
                 <tr>
@@ -34,15 +25,14 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2"><input type="submit" class="btn btn-outline-dark" value="Calculate!"></td>
+                    <td colspan="2"><input type="submit" class="btn btn-outline-dark" id="myButt" value="Calculate!"></td>
                 </tr>
             </table>
 
         }
 
-        <h4 style="color:purple">
+        <h2 style="color:purple">
             @ViewBag.Ausgabe @ViewBag.EUR
-        </h4>
-    </div>
-</body>
-</html>
+        </h2>
+
+
